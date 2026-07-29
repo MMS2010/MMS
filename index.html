@@ -97,30 +97,55 @@
        input:focus {
         outline: none;
        }
+       .lan {
+        text-align: right;
+        margin-right: 3px;
+       }
+       #lan {
+        border-radius: 12px;
+        color: black; 
+        padding: 5px 12px;
+        font-size: large;      
+        border-width: 2px;
+       }
+       #lan:hover {
+        background-color: #f3f3f3;
+       }
+       .col {
+        margin-top: -38px;
+       }
    </style>
-    <title>برنامج سبحة</title>
+    <title>Rosary program</title>
 </head>
 <body>
+    <div class="lan">
+    <select id="lan">
+        <option value="index.html">English</option>
+        <option value="index2.html">Arabic</option>
+    </select>
+</div>
+<div class="col">
     <button id="btn"><img src="light.svg" alt="light" title="Light" height="30" width="30"></button>
     <button id="btn2"><img src="dark.svg" alt="dark" title="Dark" height="30" width="30"></button>
-    <p class="r">ده برنامج بسيط شغال زي السبحة</p>
+</div>
+    <p class="r">This is a simple program that works like a rosary</p>
     <div class="im">
     <img src="img.jpg" alt="سبحة" title="سبحة" height="110" width="100">
 </div>
 <div class="select">
 <select id="sel">
-    <option value="">سبحان الله</option>
-    <option value="">الحمد لله</option>
-    <option value="">الله أكبر</option>
+    <option value="Praise God">Praise God</option>
+    <option value="Thank God">Thank God</option>
+    <option value="God is great">God is great</option>
 </select>
 <form>
-    <label for="num">اكتب عدد مرات التسبيح</label>
+    <label for="num">Enter the number of recitations</label>
     <input type="number" id="num">
 </form>
 </div>
 <div class="bb">
     <div class="btn">
-        <button type="reset" id="re"> اعاده الضبط</button>
+        <button type="reset" id="re">Reset</button>
         <button id="bt2">–</button>
     <button id="bt">+</button>
 </div>
@@ -139,16 +164,17 @@
     let sound = new Audio("click.mp3");
     let sel = document.getElementById("sel");
     let num = document.getElementById("num");
+    let lan = document.getElementById("lan");
     bt.addEventListener("click" , function () {
         sound.currentTime = 0;
         sound.play();
      b.textContent = Number(b.textContent) + 1;
      if (b.textContent == num.value) {
-        alert("تمام انت كده خلصت ممكن تبدأ تاني");
+        alert("Okay, you're finished now. You can start again.");
         b.textContent = 0;
     }
     if (num.value == "") {
-        alert("اكتب عدد التسبيح اولا");
+        alert("Write down the number of times you should recite the tasbih (glorification of God) first.");
         b.textContent = 0;
     }
     });
@@ -175,7 +201,8 @@
      document.querySelector("label").style.color = "blue";
      document.querySelector("input").style.color = "blue";
      document.querySelector("input").style.borderColor = "blue";
-     document.querySelector("select").style.borderColor = "black";
+     document.querySelector("#lan").style.borderColor = "black";
+     document.querySelector("#sel").style.borderColor = "black";
     });
     btn2.addEventListener("click" , function () {
      document.querySelector("body").style.backgroundColor = "black";
@@ -191,10 +218,14 @@
      document.querySelector("label").style.color = "white";
      document.querySelector("input").style.color = "black";
      document.querySelector("input").style.borderColor = "red";
-     document.querySelector("select").style.borderColor = "red";
+     document.querySelector("#lan").style.borderColor = "red";
+     document.querySelector("#sel").style.borderColor = "red";
     });
     sel.addEventListener("change" , function () {
         b.textContent = "0";
+    });
+    lan.addEventListener("change" , function () {
+        window.location.href = this.value;
     });
 </script>
 </body>
