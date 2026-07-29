@@ -180,6 +180,9 @@
         alert("Write down the number of times you should recite the tasbih (glorification of God) first.");
         b.textContent = 0;
     }
+    if (num.value < 0) {
+      alert("Don't write a negative number");
+    }
     });
     bt2.addEventListener("click" , function () {
         b.textContent = Number(b.textContent) - 1;
