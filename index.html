@@ -79,6 +79,23 @@
        option {
         background-color: white;
        }
+       label {
+        display: block;
+        margin-top: 5px;
+        color: blue;
+        font-size: large;
+       }
+       input {
+        margin-top: 6px;
+        border-color: blue;
+        border-width: 1px;
+        border-radius: 7px;
+        width: 3%;
+        color: blue;
+       }
+       input:focus {
+        outline: none;
+       }
    </style>
     <title>برنامج سبحة</title>
 </head>
@@ -95,6 +112,10 @@
     <option value="">الحمد لله</option>
     <option value="">الله أكبر</option>
 </select>
+<form>
+    <label for="num">اختر عدد مرات التسبيح</label>
+    <input type="number" id="num">
+</form>
 </div>
 <div class="bb">
     <div class="btn">
@@ -116,11 +137,12 @@
     let btn2 = document.getElementById("btn2");
     let sound = new Audio("click.mp3");
     let sel = document.getElementById("sel");
+    let num = document.getElementById("num");
     bt.addEventListener("click" , function () {
         sound.currentTime = 0;
         sound.play();
      b.textContent = Number(b.textContent) + 1;
-     if (b.textContent == 34) {
+     if (b.textContent == num.value) {
         alert("تمام انت كده خلصت ممكن تبدأ تاني");
         b.textContent = 0;
     }
@@ -145,6 +167,9 @@
      document.querySelector("#re").style.color = "white";
      document.querySelector("fieldset").style.borderColor = "blue";
      document.querySelector("#b").style.color = "blue";
+     document.querySelector("label").style.color = "blue";
+     document.querySelector("input").style.color = "blue";
+     document.querySelector("input").style.borderColor = "blue";
     });
     btn2.addEventListener("click" , function () {
      document.querySelector("body").style.backgroundColor = "black";
@@ -157,9 +182,13 @@
      document.querySelector("#re").style.color = "black";
      document.querySelector("fieldset").style.borderColor = "white";
      document.querySelector("#b").style.color = "white";
+     document.querySelector("label").style.color = "white";
+     document.querySelector("input").style.color = "black";
+     document.querySelector("input").style.borderColor = "red";
+     document.querySelector("select").style.borderColor = "red";
     });
     sel.addEventListener("change" , function () {
-        b.textContent = 0;
+        b.textContent = "0";
     });
 </script>
 </body>
