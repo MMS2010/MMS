@@ -146,6 +146,10 @@
         alert("تمام انت كده خلصت ممكن تبدأ تاني");
         b.textContent = 0;
     }
+    if (num.value == "") {
+        alert("اكتب عدد التسبيح اولا");
+        b.textContent = 0;
+    }
     });
     bt2.addEventListener("click" , function () {
         b.textContent = Number(b.textContent) - 1;
