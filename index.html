@@ -90,7 +90,7 @@
     <img src="img.jpg" alt="سبحة" title="سبحة" height="110" width="100">
 </div>
 <div class="select">
-<select>
+<select id="sel">
     <option value="">سبحان الله</option>
     <option value="">الحمد لله</option>
     <option value="">الله أكبر</option>
@@ -115,6 +115,7 @@
     let btn = document.getElementById("btn");
     let btn2 = document.getElementById("btn2");
     let sound = new Audio("click.mp3");
+    let sel = document.getElementById("sel");
     bt.addEventListener("click" , function () {
         sound.currentTime = 0;
         sound.play();
@@ -156,6 +157,9 @@
      document.querySelector("#re").style.color = "black";
      document.querySelector("fieldset").style.borderColor = "white";
      document.querySelector("#b").style.color = "white";
+    });
+    sel.addEventListener("change" , function () {
+        b.textContent = "0";
     });
 </script>
 </body>
