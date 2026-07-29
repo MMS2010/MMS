@@ -180,6 +180,9 @@
         alert("اكتب عدد التسبيح اولا");
         b.textContent = 0;
     }
+    if (num.value < 0) {
+        alert("لا تكتب عدد سالب");
+    }
     });
     bt2.addEventListener("click" , function () {
         b.textContent = Number(b.textContent) - 1;
