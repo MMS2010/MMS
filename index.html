@@ -118,37 +118,37 @@
         margin-top: -38px;
        }
    </style>
-    <title>Rosary program</title>
+    <title>برنامج سبحة</title>
 </head>
 <body>
     <div class="lan">
     <select id="lan">
-        <option value="index.html">English</option>
         <option value="index2.html">Arabic</option>
+        <option value="index.html">English</option>
     </select>
 </div>
 <div class="col">
     <button id="btn"><img src="light.svg" alt="light" title="Light" height="30" width="30"></button>
     <button id="btn2"><img src="dark.svg" alt="dark" title="Dark" height="30" width="30"></button>
 </div>
-    <p class="r">This is a simple program that works like a rosary</p>
+    <p class="r">ده برنامج بسيط شغال زي السبحة</p>
     <div class="im">
     <img src="img.jpg" alt="سبحة" title="سبحة" height="110" width="100">
 </div>
 <div class="select">
 <select id="sel">
-    <option value="Praise God">Praise God</option>
-    <option value="Thank God">Thank God</option>
-    <option value="God is great">God is great</option>
+    <option value="Praise God">سبحان الله</option>
+    <option value="Thank God">الحمد لله</option>
+    <option value="God is great">الله أكبر</option>
 </select>
 <form>
-    <label for="num">Enter the number of recitations</label>
+    <label for="num">اكتب عدد مرات التسبيح</label>
     <input type="number" id="num">
 </form>
 </div>
 <div class="bb">
     <div class="btn">
-        <button type="reset" id="re">Reset</button>
+        <button type="reset" id="re"> اعاده الضبط</button>
         <button id="bt2">–</button>
     <button id="bt">+</button>
 </div>
@@ -173,16 +173,16 @@
         sound.play();
      b.textContent = Number(b.textContent) + 1;
      if (b.textContent == num.value) {
-        alert("Okay, you're finished now. You can start again.");
+        alert("تمام انت كده خلصت ممكن تبدأ تاني");
         b.textContent = 0;
     }
     if (num.value == "") {
-        alert("Write down the number of times you should recite the tasbih (glorification of God) first.");
+        alert("اكتب عدد التسبيح اولا");
         b.textContent = 0;
     }
     if (num.value < 0) {
-      alert("Don't write a negative number");
-      b.textContent = 0;
+        alert("لا تكتب عدد سالب");
+        b.textContent = 0;
     }
     });
     bt2.addEventListener("click" , function () {
