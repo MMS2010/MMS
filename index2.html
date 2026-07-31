@@ -117,6 +117,9 @@
        .col {
         margin-top: -38px;
        }
+       footer {
+        margin-top: 20px;
+       }
    </style>
     <title>Rosary program</title>
 </head>
@@ -133,7 +136,7 @@
 </div>
     <p class="r">This is a simple program that works like a rosary</p>
     <div class="im">
-    <img src="img.jpg" alt="سبحة" title="سبحة" height="110" width="100">
+    <img src="img.jpg" alt="Tasbih beads" title="Tasbih beads" height="110" width="100">
 </div>
 <div class="select">
 <select id="sel">
@@ -157,6 +160,9 @@
 <fieldset>
     <p id="b">0</p>
 </fieldset>
+<footer><p>Developed by: Mohamed Shabaan <br>
+Version 1.0
+</p></footer>
 <script>
     let bt = document.getElementById("bt");
     let bt2 = document.getElementById("bt2");
@@ -210,6 +216,7 @@
      document.querySelector("input").style.borderColor = "blue";
      document.querySelector("#lan").style.borderColor = "black";
      document.querySelector("#sel").style.borderColor = "black";
+     document.querySelector("#footer").style.color = "blue";
     });
     btn2.addEventListener("click" , function () {
      document.querySelector("body").style.backgroundColor = "black";
@@ -227,6 +234,7 @@
      document.querySelector("input").style.borderColor = "red";
      document.querySelector("#lan").style.borderColor = "red";
      document.querySelector("#sel").style.borderColor = "red";
+     document.querySelector("#footer").style.color = "white";
     });
     sel.addEventListener("change" , function () {
         b.textContent = "0";
