@@ -181,15 +181,23 @@ Version 1.0
      if (b.textContent == num.value) {
         alert("Okay, you're finished now. You can start again.");
         b.textContent = 0;
+      return;
     }
     if (num.value == "") {
         alert("Write down the number of times you should recite the tasbih (glorification of God) first.");
         b.textContent = 0;
+      return;
     }
     if (num.value < 0) {
       alert("Don't write a negative number");
       b.textContent = 0;
+      return;
     }
+    if (!Number.isInteger(Number(num.value))) {
+    alert("Please enter a whole number only.");
+    b.textContent = 0;
+    return;
+}
     });
     bt2.addEventListener("click" , function () {
         b.textContent = Number(b.textContent) - 1;
