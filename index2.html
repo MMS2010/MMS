@@ -193,6 +193,10 @@ Version 1.0
       b.textContent = 0;
       return;
     }
+    if (num.value == 0) {
+        b.textContent = 0;
+        return;
+    }
     if (!Number.isInteger(Number(num.value))) {
     alert("Please enter a whole number only.");
     b.textContent = 0;
