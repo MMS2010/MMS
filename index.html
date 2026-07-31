@@ -117,6 +117,9 @@
        .col {
         margin-top: -38px;
        }
+       footer {
+        margin-top: 20px;
+       }
    </style>
     <title>برنامج سبحة</title>
 </head>
@@ -157,6 +160,9 @@
 <fieldset>
     <p id="b">0</p>
 </fieldset>
+<footer><p id="footer">تم التطوير بواسطة: محمد شعبان<br>
+    الإصدار 1.0
+    </p></footer>
 <script>
     let bt = document.getElementById("bt");
     let bt2 = document.getElementById("bt2");
@@ -210,6 +216,7 @@
      document.querySelector("input").style.borderColor = "blue";
      document.querySelector("#lan").style.borderColor = "black";
      document.querySelector("#sel").style.borderColor = "black";
+     document.querySelector("#footer").style.color = "blue";
     });
     btn2.addEventListener("click" , function () {
      document.querySelector("body").style.backgroundColor = "black";
@@ -227,6 +234,7 @@
      document.querySelector("input").style.borderColor = "red";
      document.querySelector("#lan").style.borderColor = "red";
      document.querySelector("#sel").style.borderColor = "red";
+     document.querySelector("#footer").style.color = "white";
     });
     sel.addEventListener("change" , function () {
         b.textContent = "0";
