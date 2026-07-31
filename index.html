@@ -192,6 +192,10 @@
         b.textContent = 0;
       return;
     }
+    if (num.value == 0) {
+        b.textContent = 0;
+        return;
+    }
     if (!Number.isInteger(Number(num.value))) {
     alert("من فضلك أدخل عددًا صحيحًا فقط");
     b.textContent = 0;
