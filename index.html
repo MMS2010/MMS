@@ -185,11 +185,18 @@
     if (num.value == "") {
         alert("اكتب عدد التسبيح اولا");
         b.textContent = 0;
+      return;
     }
     if (num.value < 0) {
         alert("لا تكتب عدد سالب");
         b.textContent = 0;
+      return;
     }
+    if (!Number.isInteger(Number(num.value))) {
+    alert("من فضلك أدخل عددًا صحيحًا فقط");
+    b.textContent = 0;
+    return;
+}
     });
     bt2.addEventListener("click" , function () {
         b.textContent = Number(b.textContent) - 1;
